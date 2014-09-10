@@ -15,20 +15,17 @@
 
 <body>
 <?php
-	//Initiate the input
+	//Initiate the input and declare variables.
 	$score = rand(30,100);
 	//Determine the grade
-	if($score >= 90){
-		$grade = 'A';
-	}else if($score >= 80){
-		$grade = 'B';
-	}else if($score >= 70){
-		$grade = 'C';
-	}else if($score >= 60){
-		$grade = 'D';
-	}else{
-		$grade = 'F';
+	switch(true){
+		case $score>= 90:				  $grade = 'A';break;
+		case $score >= 80 && $score < 90: $grade = 'B';break;
+		case $score >= 70 && $score < 80: $grade = 'C';break;
+		case $score >= 60 && $score < 70: $grade = 'D';break;
+		default:						  $grade = 'F';	
 	}
+					
 	//Output results
 	echo "<h1>A score of $score = $grade</h1>";
 	
